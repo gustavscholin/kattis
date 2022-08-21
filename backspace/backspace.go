@@ -8,9 +8,9 @@ import (
 )
 
 func main() {
-	scanner := bufio.NewScanner(os.Stdin)
-	scanner.Scan()
-	text := scanner.Text()
+	var stdinReader = bufio.NewReaderSize(os.Stdin, 10000000)
+	scanner := bufio.NewReader(stdinReader)
+	text, _ := scanner.ReadString('\n')
 	text_list := []rune(text)
 	var out []string
 
